@@ -1,0 +1,24 @@
+# Ignore local environment files
+**/.env
+**/.env.local
+**/.env.development
+**/.env.production
+**/.dev.vars
+
+# Node / build output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.output/
+**/.output/
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*

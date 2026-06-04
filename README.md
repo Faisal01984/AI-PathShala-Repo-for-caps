@@ -20,16 +20,9 @@ AI PATHSHALA is implemented as a hybrid React + server-function SaaS platform:
 - **Export:** PDF/DOCX lesson and report generation in the browser
 - **Hosting-ready:** Cloudflare Workers / Vite Cloudflare integration via Wrangler
 
-```mermaid
-flowchart LR
-  UI[Teacher / Admin Dashboard] -->|Auth + Queries| SupabaseClient[Supabase Client]
-  UI -->|Calls| ServerFns[Server Functions]
-  ServerFns -->|Secure Admin| SupabaseAdmin[Supabase Service Role]
-  ServerFns -->|AI Requests| Gemini[Gemini API via Lovable Gateway]
-  ServerFns -->|Transcript| RapidAPI[YouTube Transcript API]
-  SupabaseClient -->|Stores| Postgres[Supabase Database]
-  Postgres -->|Grades / Lessons| UI
-```
+![Solution Architecture](docs/architecture-diagram.svg)
+
+> The static architecture diagram is included as an SVG so it renders correctly on GitHub and GitHub Pages.
 
 ## Features
 

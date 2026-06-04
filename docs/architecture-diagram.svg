@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560">
   <style>
-    .node { fill:#eef2ff; stroke:#1d4ed8; stroke-width:2; rx:16; ry:16; }
-    .label { font: 16px 'Segoe UI', Arial, sans-serif; fill:#0f172a; }
-    .small { font: 14px 'Segoe UI', Arial, sans-serif; fill:#334155; }
+    .node { fill:#f8fafc; stroke:#2563eb; stroke-width:2; rx:20; ry:20; }
+    .title { font: 18px 'Segoe UI', Arial, sans-serif; fill:#0f172a; font-weight:700; }
+    .subtitle { font: 14px 'Segoe UI', Arial, sans-serif; fill:#334155; }
     .arrow { fill:none; stroke:#2563eb; stroke-width:3; marker-end:url(#arrowhead); }
+    .label { font: 13px 'Segoe UI', Arial, sans-serif; fill:#1e293b; }
   </style>
   <defs>
     <marker id="arrowhead" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto">
@@ -11,40 +12,52 @@
     </marker>
   </defs>
 
-  <rect class="node" x="40" y="210" width="240" height="90" rx="18" ry="18" />
-  <text class="label" x="160" y="245" text-anchor="middle">Teacher / Admin</text>
-  <text class="small" x="160" y="270" text-anchor="middle">Dashboard UI</text>
+  <rect class="node" x="80" y="60" width="280" height="120" />
+  <text class="title" x="220" y="95" text-anchor="middle">Teacher / Admin</text>
+  <text class="subtitle" x="220" y="122" text-anchor="middle">Dashboard UI</text>
+  <text class="subtitle" x="220" y="148" text-anchor="middle">Lesson creation, review, export</text>
 
-  <rect class="node" x="300" y="60" width="260" height="90" rx="18" ry="18" />
-  <text class="label" x="430" y="100" text-anchor="middle">Supabase</text>
-  <text class="small" x="430" y="125" text-anchor="middle">Client + Auth</text>
+  <rect class="node" x="360" y="60" width="260" height="120" />
+  <text class="title" x="490" y="95" text-anchor="middle">Supabase Client</text>
+  <text class="subtitle" x="490" y="122" text-anchor="middle">Authentication + user data</text>
+  <text class="subtitle" x="490" y="148" text-anchor="middle">Real-time queries</text>
 
-  <rect class="node" x="300" y="280" width="260" height="90" rx="18" ry="18" />
-  <text class="label" x="430" y="320" text-anchor="middle">Server Functions</text>
-  <text class="small" x="430" y="345" text-anchor="middle">Secure AI + APIs</text>
+  <rect class="node" x="640" y="60" width="260" height="120" />
+  <text class="title" x="770" y="95" text-anchor="middle">Supabase Database</text>
+  <text class="subtitle" x="770" y="122" text-anchor="middle">Lessons, users, progress</text>
 
-  <rect class="node" x="620" y="80" width="240" height="90" rx="18" ry="18" />
-  <text class="label" x="740" y="120" text-anchor="middle">Supabase</text>
-  <text class="small" x="740" y="145" text-anchor="middle">Database</text>
+  <rect class="node" x="220" y="240" width="280" height="120" />
+  <text class="title" x="360" y="275" text-anchor="middle">Server Functions</text>
+  <text class="subtitle" x="360" y="302" text-anchor="middle">Secure backend logic</text>
+  <text class="subtitle" x="360" y="328" text-anchor="middle">AI orchestration + Supabase admin calls</text>
 
-  <rect class="node" x="620" y="240" width="240" height="90" rx="18" ry="18" />
-  <text class="label" x="740" y="280" text-anchor="middle">Supabase</text>
-  <text class="small" x="740" y="305" text-anchor="middle">Service Role</text>
+  <rect class="node" x="560" y="260" width="260" height="120" />
+  <text class="title" x="690" y="295" text-anchor="middle">AI & External APIs</text>
+  <text class="subtitle" x="690" y="322" text-anchor="middle">Gemini / Lovable + YouTube</text>
+  <text class="subtitle" x="690" y="348" text-anchor="middle">Transcript extraction + lesson generation</text>
 
-  <rect class="node" x="620" y="380" width="240" height="90" rx="18" ry="18" />
-  <text class="label" x="740" y="420" text-anchor="middle">AI + APIs</text>
-  <text class="small" x="740" y="445" text-anchor="middle">Gemini + YouTube</text>
+  <rect class="node" x="220" y="430" width="280" height="100" />
+  <text class="title" x="360" y="465" text-anchor="middle">Service Role</text>
+  <text class="subtitle" x="360" y="492" text-anchor="middle">Supabase admin access</text>
 
-  <path class="arrow" d="M280 255 L300 255" />
-  <path class="arrow" d="M260 240 L300 240" />
-  <path class="arrow" d="M310 340 L620 340" />
-  <path class="arrow" d="M430 370 L430 380 L620 380" />
-  <path class="arrow" d="M550 315 L620 315" />
-  <path class="arrow" d="M460 95 L620 95" />
-  <path class="arrow" d="M620 145 L460 145 L460 245" />
+  <path class="arrow" d="M320 180 L360 180" />
+  <text class="label" x="340" y="170" text-anchor="middle">Auth / Data</text>
 
-  <text class="small" x="325" y="240" text-anchor="start">Calls</text>
-  <text class="small" x="505" y="360" text-anchor="end">AI Requests</text>
-  <text class="small" x="635" y="165" text-anchor="start">Stores data</text>
-  <text class="small" x="635" y="425" text-anchor="start">Transcript/AI</text>
+  <path class="arrow" d="M190 180 L190 240 L220 240" />
+  <text class="label" x="160" y="210" text-anchor="middle">UI calls</text>
+
+  <path class="arrow" d="M500 180 L500 240" />
+  <text class="label" x="520" y="210" text-anchor="start">Data sync</text>
+
+  <path class="arrow" d="M500 360 L560 360" />
+  <text class="label" x="530" y="350" text-anchor="middle">AI requests</text>
+
+  <path class="arrow" d="M500 360 L500 430 L360 430" />
+  <text class="label" x="470" y="410" text-anchor="middle">Admin access</text>
+
+  <path class="arrow" d="M720 180 L720 240 L560 240" />
+  <text class="label" x="780" y="210" text-anchor="middle">Read / write</text>
+
+  <path class="arrow" d="M640 140 L640 220" />
+  <text class="label" x="660" y="180" text-anchor="start">Sync user data</text>
 </svg>

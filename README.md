@@ -57,8 +57,8 @@ AI PATHSHALA is implemented as a hybrid React + server-function SaaS platform:
 ## Installation Steps
 
 ```bash
-git clone <REPO_URL>
-cd "AI PATHSHALA GIT REPO"/FrontEnd
+git clone https://github.com/Faisal01984/AI-PathShala-Repo-for-caps
+cd AI-PathShala-Repo-for-caps/FrontEnd
 npm install
 cp .env.example .env
 # update .env with your Supabase, Gemini, RapidAPI, and Lovable API keys
@@ -96,28 +96,16 @@ RAPIDAPI_KEY="YOUR_RAPIDAPI_KEY"
 |---|
 | ![Principal Dashboard](Screenshot/7%20All%20Students%20Progress%20in%20Principal's%20Dashboard.png) |
 
-## GIF Demos
-
-- Lesson generation flow: `docs/demo-lesson-generation.gif`
-- Student announcement and export workflow: `docs/demo-announcement-export.gif`
-
 ## Project Explainer Images
-
-Below are two project explainer visuals included in this repository. They will render on GitHub and GitHub Pages when the changes are committed and pushed.
 
 | Explainer 1 | Explainer 2 |
 |---|---|
 | ![Project Explainer 1](Project%20Explainer%20image%201.png) | ![Project Explainer 2](Project%20Explainer%20image%202.jpg) |
 
-
-> Replace these placeholder paths with your actual GIF assets.
-
 ## Deployment Links
 
-- Live App: `https://ai-pathshala.example.com`
-- CI/CD: `https://github.com/<USERNAME>/<REPO>/actions`
-
-> Update these links with the actual deployment URL and pipeline once deployed.
+- **Live App:** [https://ai-pathshala-creations.lovable.app](https://ai-pathshala-creations.lovable.app)
+- **Main Code Repo:** [https://github.com/Faisal01984/ai-pathshala-creations](https://github.com/Faisal01984/ai-pathshala-creations)
 
 ## Future Roadmap
 
@@ -130,13 +118,11 @@ Below are two project explainer visuals included in this repository. They will r
 
 ## Creator Information
 
-Created by the AI PATHSHALA team.
+Created by Mohd Faisal.
 
-- Portfolio: [Your Website](https://your-portfolio.example.com)
-- Contact: hello@your-domain.example.com
+- Live App: [https://ai-pathshala-creations.lovable.app](https://ai-pathshala-creations.lovable.app)
+- Contact: faisal01984@gmail.com
 
 ## License
 
 MIT License
-
-> Add a `LICENSE` file or replace this section with your preferred open-source license.

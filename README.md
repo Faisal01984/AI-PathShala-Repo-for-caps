@@ -1,6 +1,6 @@
 # AI PATHSHALA
 
-![AI Pathshala](https://img.shields.io/badge/AI-SaaS-blue)
+![AI Pathshala](https://img.shields.io/badge/AI-SaaS-blue) ![Live](https://img.shields.io/badge/Live-App-green) ![Made with Lovable](https://img.shields.io/badge/Built%20with-Lovable-emerald)
 
 ## Product Overview
 
@@ -20,19 +20,75 @@ AI PATHSHALA is implemented as a hybrid React + server-function SaaS platform:
 - **Export:** PDF/DOCX lesson and report generation in the browser
 - **Hosting-ready:** Cloudflare Workers / Vite Cloudflare integration via Wrangler
 
-![Solution Architecture](docs/architecture-diagram.svg)
+```mermaid
+graph TD
+    subgraph USERS["👥 Users"]
+        T["🎓 Teacher"]
+        S["📚 Student"]
+        P["🏫 Principal"]
+    end
 
-> The static architecture diagram is included as an SVG so it renders correctly on GitHub and GitHub Pages.
+    subgraph FRONTEND["🌐 Frontend — React 19 + Vite + Tailwind + TanStack Router"]
+        UI["Web App UI"]
+        AUTH["Auth Pages\n(Sign In / Sign Up)"]
+        DASH["Dashboards\n(Teacher / Student / Principal)"]
+        CREATE["Lesson Creator\n(4 input modes)"]
+        EXPORT["PDF / DOCX Export\njsPDF · docx · html2canvas"]
+    end
+
+    subgraph BACKEND["⚙️ Backend — TanStack Start Server Functions"]
+        LFN["lesson.functions.ts\nLesson Generation"]
+        YFN["youtube.functions.ts\nYouTube Transcripts"]
+        IFN["image.functions.ts\nImage Analysis"]
+        EFN["email-notify.functions.ts\nEmail Notifications"]
+    end
+
+    subgraph DATABASE["🗄️ Supabase"]
+        PG["Postgres DB\nLessons · Profiles · Quiz Attempts"]
+        STORAGE["File Storage\nHomework Uploads"]
+        RLS["Row-Level Security\nRole-Based Access"]
+    end
+
+    subgraph AI["🤖 AI Services"]
+        GEMINI["Google Gemini 2.5 Flash\nLesson Generation"]
+        RAPID["RapidAPI\nYouTube Transcripts"]
+        VISION["Gemini Vision\nImage Analysis"]
+    end
+
+    subgraph DELIVERY["📧 Email Delivery"]
+        MAKE["Make.com\nCustom Webhook"]
+        HTTP["HTTP Module\nGemini Email Writer"]
+        RESEND["Resend API\nEmail Delivery"]
+    end
+
+    T & S & P --> UI
+    UI --> AUTH
+    AUTH --> DATABASE
+    UI --> DASH
+    UI --> CREATE
+    CREATE --> BACKEND
+    LFN --> GEMINI
+    YFN --> RAPID
+    IFN --> VISION
+    EFN --> MAKE
+    MAKE --> HTTP
+    HTTP --> RESEND
+    RESEND -->|"📬 Email Alert"| S
+    BACKEND --> DATABASE
+    DASH --> DATABASE
+    CREATE --> EXPORT
+```
 
 ## Features
 
-- ✅ AI lesson generation with structured learning objects, quizzes, and homework
+- ✅ AI lesson generation with structured learning objectives, quizzes, and homework
 - ✅ YouTube transcript import for rapid lesson building
 - ✅ Image-based lesson creation from diagrams, notes, or textbook pages
 - ✅ Teacher and student role management using Supabase auth
 - ✅ Export lessons and reports to PDF/DOCX
-- ✅ Automated lesson announcements and email templates
+- ✅ Automated lesson announcements via Make.com + Resend email
 - ✅ Subject curriculum suggestions for AI, Python, web development, robotics, and data science
+- ✅ Multilingual support — English, Hindi, Roman Hindi, Arabic (RTL)
 - ✅ Responsive dashboard and lesson workflow for teachers, students, and principals
 
 ## Workflow Explanation
@@ -42,15 +98,16 @@ AI PATHSHALA is implemented as a hybrid React + server-function SaaS platform:
 3. **Generate a lesson** using AI with optional source text, YouTube URL, or image upload.
 4. **Review and edit** the generated lesson, worksheet, quiz, and homework content.
 5. **Export** the lesson as PDF or DOCX for offline teaching.
-6. **Notify students** with announcement emails or classroom updates.
+6. **Notify students** with automated email announcements via Make.com.
 7. **Track progress** through student and principal dashboards.
 
 ## Tech Stack
 
 - Frontend: React 19, Vite, Tailwind CSS, TanStack Router
 - Backend / Functions: `@tanstack/react-start`, Supabase server functions
-- Database: Supabase Postgres
-- AI: Gemini (via Lovable API gateway), RapidAPI transcript service
+- Database: Supabase Postgres + Storage + Row-Level Security
+- AI: Google Gemini 2.5 Flash, RapidAPI (YouTube), Gemini Vision (images)
+- Automation: Make.com webhooks + HTTP + Resend email delivery
 - Export: jsPDF, docx, html2canvas
 - Deployment: Cloudflare Workers / Wrangler, Vite build
 
@@ -120,8 +177,8 @@ RAPIDAPI_KEY="YOUR_RAPIDAPI_KEY"
 
 Created by Mohd Faisal.
 
-- Live App: [https://ai-pathshala-creations.lovable.app](https://ai-pathshala-creations.lovable.app)
-- Contact: faisal01984@gmail.com
+- **Live App:** [https://ai-pathshala-creations.lovable.app](https://ai-pathshala-creations.lovable.app)
+- **Contact:** faisal01984@gmail.com
 
 ## License
 

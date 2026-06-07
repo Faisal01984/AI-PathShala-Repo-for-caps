@@ -2,6 +2,17 @@
 
 ![AI Pathshala](https://img.shields.io/badge/AI-SaaS-blue) ![Live](https://img.shields.io/badge/Live-App-green) ![Made with Lovable](https://img.shields.io/badge/Built%20with-Lovable-emerald)
 
+## Repository Structure
+
+```
+AI-PathShala-Repo-for-caps/
+├── FrontEnd/    ← React 19 + Vite + TanStack (Lovable generated code)
+├── BackEnd/     ← Make.com automation workflow config (JSON)
+└── README.md    ← Project documentation
+```
+
+---
+
 ## Product Overview
 
 AI PATHSHALA is a modern AI-powered lesson creation SaaS built for educators and schools. It enables teachers to generate complete lesson plans, quizzes, worksheets, homework templates, and student announcements using AI, while centralizing class content and analytics in a polished web dashboard.

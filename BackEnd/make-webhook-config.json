@@ -1,0 +1,37 @@
+{
+  "automation_tool": "Make.com",
+  "scenario_name": "AI PathShala Lesson Notification V2",
+  "description": "Automated email notification system for AI PathShala",
+  "workflow": [
+    {
+      "module": "Custom Webhook",
+      "type": "trigger",
+      "description": "Receives lesson data from AI PathShala when teacher clicks Email button"
+    },
+    {
+      "module": "HTTP - Make a Request",
+      "type": "action",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+      "method": "POST",
+      "description": "Sends lesson details to Google Gemini API to generate a professional email"
+    },
+    {
+      "module": "HTTP - Make a Request",
+      "type": "action",
+      "url": "https://api.resend.com/emails",
+      "method": "POST",
+      "description": "Sends the AI-generated email to students via Resend API"
+    },
+    {
+      "module": "Webhook Response",
+      "type": "response",
+      "description": "Returns success response back to AI PathShala"
+    }
+  ],
+  "trigger": "Teacher clicks Email button on a lesson page",
+  "data_sent": {
+    "lesson_title": "string",
+    "student_emails": "array of email addresses"
+  },
+  "webhook_url": "https://hook.eu1.make.com/xm12kp44v63qtf1as4ttnqrool4u5avg"
+}
